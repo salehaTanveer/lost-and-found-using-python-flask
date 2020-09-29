@@ -1,0 +1,16 @@
+# templates/register.html
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block content %}
+<div class="container">
+  <h3>Product Form</h3>
+  <p><a href="/home">Return to home</a></p>
+  <hr>
+    {{ wtf.quick_form(form) }}
+
+    {% for message in get_flashed_messages() %}
+    {{ message }}
+  {% endfor %}
+  <hr>
+</div>
+{% endblock %}
